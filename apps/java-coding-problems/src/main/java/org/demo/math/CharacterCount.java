@@ -2,6 +2,7 @@ package org.demo.math;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * 문자 개수 세기
@@ -16,5 +17,13 @@ public class CharacterCount {
         }
 
         return result;
+    }
+
+    public Map<Character, Long> countDuplicateCharactersMap(String str) {
+        Map<Character, Long> collect = str.chars()
+                .mapToObj(c -> (char) c)
+                .collect(Collectors.groupingBy(c -> c, Collectors.counting()));
+
+        return collect;
     }
 }
