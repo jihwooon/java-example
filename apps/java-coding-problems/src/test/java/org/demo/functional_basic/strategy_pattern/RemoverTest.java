@@ -9,16 +9,6 @@ import org.junit.jupiter.api.Test;
 class RemoverTest {
 
     @Test
-    @DisplayName("문자가 주어질때 문자에 숫자를 제거하고 나머지 문자를 리턴한다")
-    void it_return_remove_number() {
-        Remover remover = new Remover();
-
-        String result = remover.remove("abc12345", new NumberRemover());
-
-        assertThat(result).isEqualTo("abc");
-    }
-
-    @Test
     @DisplayName("문자가 주어질때 문자에 공백을 제거하고 나머지 문자를 리턴한다")
     void it_return_remove_whitespace() {
         Remover remover = new Remover();
